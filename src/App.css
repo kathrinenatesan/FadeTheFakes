@@ -1,0 +1,120 @@
+/* heading */ 
+#heading {
+  margin-top: -10rem;
+  margin-left: 20rem;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+#directions {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  list-style: none;
+  max-width: 55rem;
+  background-color: #f5d1d1;
+}
+
+/* followers upload */
+#followers-label{
+  margin-left: 20rem;
+  margin-top: 1rem;
+  width: 20rem;
+  height: 4rem;
+  padding: 10px 25px;       
+  border-radius: 50px;      
+  cursor: pointer;          
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: "Playfair Display", serif;
+  color: #ffffffe5;
+  text-align: center;
+  background-color: #1b1919;
+  border: 2px solid #6d3f3bb8;
+}
+
+#followers-upload {
+  display: none;
+}
+
+/* following upload */
+#following-label{
+  margin-left: 12rem;
+  width: 20rem;
+  height: 4rem;
+  padding: 10px 25px;       
+  border-radius: 50px;      
+  cursor: pointer;          
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: "Playfair Display", serif;
+  color: #ffffffe5;
+  text-align: center;
+  background-color: #1b1919;
+  border: 2px solid #6d3f3bb8;
+}
+
+#following-upload {
+  display: none;
+}
+
+/* who's fake generator button */
+#fake-btn {
+  margin-left: 20rem;
+  margin-top: 5rem;
+  width: 20rem;
+  height: 4rem;
+  padding: 10px 25px;       
+  border-radius: 50px;      
+  cursor: pointer;          
+  font-size: 1.5rem;
+  font-style: italic;
+  font-family: "Playfair Display", serif;
+  color: #ffffffe5;
+  text-align: center;
+  background-color: #8a0c0c;
+  border: 5px solid #020000b8;
+}
+
+/*fakes list */
+#fake-section {
+  display: block;
+  width: 100%;
+  max-width: 500px; 
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+#fake-section-heading {
+  display: none;
+  margin-left: -20rem;
+  margin-top: 1rem;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 3rem;
+}
+
+#fake-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#fake-list li {
+  background: #ffb0b0;
+  color: #a00000;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#fake-list li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
