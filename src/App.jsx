@@ -48,26 +48,35 @@ export default function App() {
     reader.readAsText(file);
   }
 
-  function extractUsernamesFollowers(data) {
-      return data.flatMap(user => user.string_list_data.map(inner => inner.value));
+  function extractUsernamesFollowers(data) { 
+    return data.flatMap(user => user.string_list_data.map(item => item.value) ); 
+  } 
+  
+  function extractUsernamesFollowing(data) { 
+    const following = data.relationships_following 
+    return following.map(user => user.title); 
   }
 
-    function extractUsernamesFollowing(data) {
-      const followingList = data.relationships_following
-      const usernames = followingList.map((user) => user.title)
-      return usernames
-    }
+
 
   function findFakes() {
-    const fakesList = following.filter((followingUser) =>
-      !followers.includes(followingUser)
-    )
-    setFakes(fakesList)
-    console.log(fakesList)
-  }
+  console.log("Followers count:", followers.length);
+  console.log("Following count:", following.length);
+
+  console.log("Sample follower:", followers[0]);
+  console.log("Sample following:", following[0]);
+
+  const fakesList = following.filter(user =>
+    !followers.includes(user)
+  );
+
+  console.log("Fakes count:", fakesList.length);
+  setFakes(fakesList);
+}
+
 
   return (
-    <>
+    <div id="big-container">
     <div id="heading">
       <h1>FADE THE FAKES!</h1>
       <ul id="directions">
@@ -75,7 +84,7 @@ export default function App() {
           <li>2. Go to Profile, the 3 bars on the top right, search "download your information," and click that.</li>
           <li>3. Press the blue "create export button" and "export to device."</li>
           <li>4. IMPORTANT!! Press "customize information" and press the "clear all" buttons under everything except "connections" (which should have followers and following under it) and press save.</li>
-          <li>5. Change the date range to the last option (custom, which should say today's date)</li>
+          <li>5. Change the date range to the ALL TIME</li>
           <li> 6. Under format, change from "HTML" to "JSON" and press save.</li>
           <li>7. Wait ~10 minutes for the notification that your file is ready, and download the file.</li>
           <li>8. Upload the "following.json" and "followers.json" files by clicking the respective buttons and press the "who's fake" button to see the list of people who don't follow you back!</li>
@@ -106,6 +115,6 @@ export default function App() {
         {fakes.map(user => (<li key={user}>{user}</li>))}
       </ul>
     </div>
-    </>
+    </div>
   )
 }
